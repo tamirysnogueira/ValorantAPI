@@ -1,0 +1,62 @@
+header {
+    background-color: $mainBackgroundColor;
+
+    #logoAndInfo {
+        padding: 2rem;
+
+        #logo {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+    }
+}
+
+main {
+    width: 100vw;
+    height: 100%;
+
+    #s-hero {
+        width: 100%;
+        height: 89rem;
+
+        position: relative;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        #bg-video {
+            width: 100%;
+            height: 100%;
+
+            z-index: -1;
+            position: absolute;
+
+            video {
+                width: 100%;
+                height: 100%;
+
+                object-fit: cover;
+            }
+
+            &::after {
+                content: '';
+                width: 100%;
+                height: 100%;
+
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                background-color: rgba($mainSecondaryBackgroundColor, $alpha: 0.9);
+            }
+
+        }
+
+        h1 {
+            font-size: 10rem;
+            color: $secondaryDarkColor;
+        }
+    }
+}

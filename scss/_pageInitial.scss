@@ -1,0 +1,53 @@
+#pageInitial {
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+
+    z-index: 1;
+
+    background-color: $secondaryDarkColor;
+    
+
+    svg {
+        path {
+            fill: none;
+            animation: dash 6s linear forwards;
+
+            @keyframes dash {
+                0%{
+                    stroke-width: 0;
+                    stroke-dasharray: 1 100;
+                    fill: transparent;
+                }
+                25%{
+                    stroke-width: 0.3;
+                    stroke-dasharray: 100 0;
+                    fill: transparent;
+                }
+                60%,100%{
+                    stroke-width: 0;
+                    fill: black;
+                }
+            }
+        }
+    }
+
+    #animation {
+        width: 100%;
+        height: 100%;
+        background-color: $mainBackgroundColor;
+        top: -100;
+
+        position: absolute;
+
+        transform: rotate(250deg);
+        right: -1300px;
+    }
+}
