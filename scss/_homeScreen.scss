@@ -49,14 +49,31 @@ main {
                 top: 0;
                 left: 0;
 
-                background-color: rgba($mainSecondaryBackgroundColor, $alpha: 0.9);
+                background-color: rgba($mainBackgroundColor, $alpha: 0.8);
             }
 
         }
 
         h1 {
             font-size: 10rem;
-            color: $secondaryDarkColor;
+            color: $secondaryLightColor;
+        }
+    }
+
+    #mainAgents {
+        width: 100vw;
+        height: 100%;
+
+        background-color: $mainBackgroundColor;
+
+        .container {
+            padding-top: 30rem;
+
+            #containerAgents {
+                width: 100%;
+
+                display: flex;
+            }
         }
     }
 }
