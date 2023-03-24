@@ -1,28 +1,25 @@
-
-let maps = []
-
 const baseURL = "https://valorant-api.com/v1";
+const allThingsOfAPI = []
 
-async function context(){
+async function getAPI(type){
     try {
-            fetch(`${baseURL}/agents`)
-                .then ((res) => {
-                    return res.json()
-                })
+        const response = await fetch(`${baseURL}/${type}`)
+        const data = await response.json()
+        return data
 
-                .then ((data) => {
-                    console.log(data)
-                })
-
-        
-        
     } catch (error) {
         console.log(error)
     }
 
 }
 
-document.addEventListener('DOMContentLoaded', ()=> {
-    context()
+document.addEventListener('DOMContentLoaded', async ()=> {
+    const agents = await getAPI('agents')
+    const maps = await getAPI('maps')
+    
+    allThingsOfAPI.push(agents, maps)
+
 })
+
+export default allThingsOfAPI
 
