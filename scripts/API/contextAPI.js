@@ -1,5 +1,4 @@
 const baseURL = "https://valorant-api.com/v1";
-const allThingsOfAPI = []
 
 async function getAPI(type){
     try {
@@ -13,13 +12,13 @@ async function getAPI(type){
 
 }
 
-document.addEventListener('DOMContentLoaded', async ()=> {
-    const agents = await getAPI('agents')
-    const maps = await getAPI('maps')
-    
-    allThingsOfAPI.push(agents, maps)
+const allAgents = async () => {
+    return await getAPI('agents')
+}
 
-})
+const allMaps = async () => {
+    return await getAPI('maps')
+}
 
-export default allThingsOfAPI
+export {allAgents, allMaps}
 
