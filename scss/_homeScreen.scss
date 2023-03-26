@@ -62,7 +62,7 @@ main {
 
     #mainAgents {
         width: 100vw;
-        height: 100%;
+        height: 110rem;
 
         background-color: $mainBackgroundColor;
 
@@ -70,9 +70,31 @@ main {
             padding-top: 30rem;
 
             #containerAgents {
-                width: 100%;
-
                 display: flex;
+
+                width: 100%;
+                height: 100%;
+
+                div {
+                    max-width: 60rem;
+                    width: 100%;
+                    height: 60rem;
+
+                    border-radius: 10px 0px 10px 10px;
+
+                    position: relative;
+
+                    img {
+                        left: 0;
+                        top: -150px;
+                        max-width: 80rem;
+                        width: 80rem;
+
+                        position: absolute;
+                    }
+
+
+                }
             }
         }
     }
