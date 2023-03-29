@@ -1,3 +1,7 @@
+import { allAgents } from "../API/contextAPI";
+
+const containerAgentsChildren = document.getElementById('containerAgents').children
+
 document.addEventListener('DOMContentLoaded', () => {
     const tl1 = new TimelineMax();
     tl1
@@ -24,4 +28,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 { y: 0, opacity: 1, ease: Back.easeOut.config(1.7)
             }, '-=0.3')
 })
+
+
+for (const children of containerAgentsChildren) {
+    children.addEventListener('mouseover', ()=> {
+        const infoAgents = children.children[1]
+
+        const agents = allAgents().data
+
+        for (const agent of agents) {
+            if(agent.displayName === children.id){
+                console.log('oi')
+            }
+        } 
+    })
+}
+
+
 

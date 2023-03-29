@@ -5,21 +5,23 @@ function makeTheAgentsDiv(agents) {
         containerAgents.innerHTML += `
             <div id="${agent.displayName}">
                 <img src="${agent.fullPortrait}" alt="Image of ${agent.displayName}">
-                <p>${agent.displayName}</p>
-
+                <div class='infoAgents'>
+                    <p>${agent.displayName}</p>
+                
+                </div>
             </div>
         
         `
 
-        const containerAgent = document.getElementById(`${agent.displayName}`)
-        containerAgent.style.backgroundColor = `#${agent.backgroundGradientColors[0]}`
+        // const containerAgent = document.getElementById(`${agent.displayName}`)
+        // containerAgent.style.backgroundColor = `#${agent.backgroundGradientColors[0]}`
         
     }
 
 }
 
 function searchTheAgents(agents){
-    const nameOfAgents = ['Gekko']
+    const nameOfAgents = ['Gekko', 'Reyna', 'Sage']
 
     const arrayOfAgents = agents.filter( agent => {
         for (const nameAgent of nameOfAgents) {

@@ -64,38 +64,100 @@ main {
         width: 100vw;
         height: 110rem;
 
-        background-color: $mainBackgroundColor;
+        background-image: url(../img/backgroundAgents.png);
+        background-position: center;
+
+        &::before {
+            content: '';
+            position: absolute;
+
+            width: 100%;
+            height: 110rem;
+
+            background-color: rgba($mainBackgroundColor, 0.95);
+            z-index: 1;
+        }
 
         .container {
             padding-top: 30rem;
+            
 
             #containerAgents {
                 display: flex;
+                justify-content: space-between;
+                gap: 10rem;
 
                 width: 100%;
                 height: 100%;
 
                 div {
-                    max-width: 60rem;
-                    width: 100%;
+                    width: clamp(40rem, 100%, 50rem);
                     height: 60rem;
+                    z-index: 1;
+
+                    display: flex;
+                    justify-content: center;
 
                     border-radius: 10px 0px 10px 10px;
 
                     position: relative;
 
-                    img {
-                        left: 0;
-                        top: -150px;
-                        max-width: 80rem;
-                        width: 80rem;
+                    transition: 0.2s ease-in-out;
 
+                    img {
+
+                        width: clamp(40rem, 150%, 80rem);
                         position: absolute;
+
+                        transition: 0.8s ease-in-out;
+
+                        animation-delay: 2s;
+
+                        z-index: 3;
+                    }
+
+                    @keyframes move {
+                        from {
+                            left: 0;
+                            top: 0;
+                        }
+
+                        to {
+                            left: 10rem;
+                            top: -10rem;
+                        }
+
+
+                    }
+
+                    &:hover {
+                        img {
+                            animation: move 0.5s forwards;
+                        }
+                        
+                        &:before {
+                            height: 100%;
+                        }
+                    }
+
+                    .infoAgents {
+                        width: 100%;
+                        opacity: 0;
+                        
+                        height: 0;
+
+                        transition: 0.7s ease-in-out;
                     }
 
 
                 }
+
+                &:hover > :not(:hover) {
+                    transform: scale(0.7);
+                }
             }
         }
+
+        
     }
 }
