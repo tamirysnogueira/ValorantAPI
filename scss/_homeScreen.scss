@@ -64,24 +64,42 @@ main {
 
     #mainAgents {
         width: 100vw;
-        height: 110rem;
+        height: 160rem;
 
         background-image: url(../img/backgroundAgents.png);
         background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        position: relative;
+        z-index: -1;
+
 
         &::before {
             content: '';
             position: absolute;
 
             width: 100%;
-            height: 110rem;
+            height: 100%;
 
-            background-color: rgba($mainBackgroundColor, 0.95);
-            z-index: 1;
+            top: 0;
+
+            background-color: rgba($mainSecondaryBackgroundColor, 0.75);
+            z-index: -1;
         }
 
         .container {
-            padding-top: 30rem;
+            padding-top: 20rem;
+            z-index: 1;
+            letter-spacing: 1rem;
+            
+            h2 {
+                text-align: center;
+
+                margin-bottom: 20rem;
+                font-size: 10rem;
+                -webkit-text-stroke: 3px $secondaryDarkColor;
+            }
             
 
             #containerAgents {
@@ -89,40 +107,31 @@ main {
                 justify-content: space-between;
                 gap: 10rem;
 
-                width: 100%;
-                height: 100%;
-
                 div {
                     width: clamp(40rem, 100%, 50rem);
                     height: 60rem;
-                    z-index: 1;
-
                     display: flex;
-                    justify-content: center;
 
-                    border-radius: 10px 0px 10px 10px;
+                    border-radius: 5px 0px 5px 5px;
 
                     position: relative;
 
                     transition: 0.2s ease-in-out;
 
                     img {
-
                         width: clamp(40rem, 150%, 80rem);
                         position: absolute;
 
-                        transition: 0.8s ease-in-out;
+                        left: -10rem;
+                        top: 2rem;
 
-                        animation-delay: 2s;
-                        animation-fill-mode: forwards;
-
-                        z-index: 3;
+                        z-index: 2;
                     }
 
                     @keyframes move {
                         from {
-                            left: 0;
-                            top: 0;
+                            left: -10rem;
+                            top: 2rem;
                         }
 
                         to {
@@ -140,8 +149,8 @@ main {
                         }
 
                         to {
-                            left: 0;
-                            top: 0;
+                            left: -10rem;
+                            top: 2rem;
                         }
 
 

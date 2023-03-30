@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: "DrukWide";
+    src: url("../font/Druk-Wide-Bold.ttf");
+}
+
 html {
     font-size: 62.5%;
 }
@@ -17,4 +22,10 @@ body {
 
 h1 {
     font-family: 'Permanent Marker', cursive;
+}
+
+h2 {
+    font-family: "DrukWide", sans-serif;
+    color: transparent;
+    
 }
