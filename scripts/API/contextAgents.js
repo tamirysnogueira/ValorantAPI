@@ -12,7 +12,7 @@ function makeTheAgentsDiv(agents) {
                     <span>${agent.displayName}</span>
                     <p>${agent.description}</p>
 
-                    <a>See More</a>
+                    <button class='openInfoAgent'>See More</button>
                 </div>
             </div>
         
@@ -68,7 +68,7 @@ function styleDivAgent(agents, containerAgents) {
 //procurar na API os seguintes agentes do array e depois criar suas divs
 
 function searchTheAgents(agents){
-    const nameOfAgents = ['Gekko', 'Reyna']
+    const nameOfAgents = ['Gekko', 'Viper']
 
     const arrayOfAgents = agents.filter( agent => {
         for (const nameAgent of nameOfAgents) {
